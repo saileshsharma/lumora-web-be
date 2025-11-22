@@ -5,7 +5,6 @@ System health and status endpoints
 
 from flask import Blueprint, jsonify
 import logging
-from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +23,5 @@ def health_check():
 
     return jsonify({
         "status": "healthy",
-        "service": "AI Outfit Assistant API",
-        "timestamp": datetime.utcnow().isoformat() + "Z"
+        "message": "Outfit Assistant API is running"
     })
