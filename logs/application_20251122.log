@@ -1,0 +1,707 @@
+2025-11-22 10:31:19,397 - application - INFO - ============================================================
+2025-11-22 10:31:19,397 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 10:31:19,397 - application - INFO - ============================================================
+2025-11-22 10:31:19,397 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 10:31:19,397 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 10:31:19,397 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 10:31:19,397 - application - INFO - ============================================================
+2025-11-22 10:36:07,097 - application - INFO - ============================================================
+2025-11-22 10:36:07,097 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 10:36:07,097 - application - INFO - ============================================================
+2025-11-22 10:36:07,099 - application - INFO - Parameters - Occasion: Business, Budget: $200-$500
+2025-11-22 10:36:21,422 - application - INFO - Rating analysis completed successfully
+2025-11-22 10:38:26,563 - application - INFO - ============================================================
+2025-11-22 10:38:26,563 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 10:38:26,563 - application - INFO - ============================================================
+2025-11-22 10:38:26,565 - application - INFO - Parameters:
+2025-11-22 10:38:26,565 - application - INFO -   - Occasion: Date Night
+2025-11-22 10:38:26,566 - application - INFO -   - Wow Factor: 5
+2025-11-22 10:38:26,566 - application - INFO -   - Brands: []
+2025-11-22 10:38:26,566 - application - INFO -   - Budget: $100-$200
+2025-11-22 10:38:26,566 - application - INFO -   - Conditions: 
+2025-11-22 10:38:26,566 - application - INFO -   - User image provided: True
+2025-11-22 10:38:26,566 - application - INFO - ------------------------------------------------------------
+2025-11-22 10:38:26,566 - application - INFO - GPT-4 OUTFIT DESCRIPTION PROMPT:
+2025-11-22 10:38:26,566 - application - INFO - Create a detailed outfit recommendation for Date Night.
+
+Style level: 5/10 (balanced, stylish, and modern)
+Preferences: within a budget of $100-$200
+
+
+Provide:
+1. Complete outfit description (top, bottom, shoes, accessories)
+2. Color palette and why it works
+3. Style notes and occasion appropriateness
+4. 5-8 specific product recommendations with:
+   - Item type and description
+   - Estimated price
+   - Why it fits the outfit
+   
+Format as JSON:
+{
+  "outfit_concept": "<overall concept and inspiration>",
+  "items": [
+    {
+      "type": "<item type>",
+      "description": "<detailed description>",
+      "color": "<color>",
+      "style_notes": "<why this works>"
+    }
+  ],
+  "color_palette": "<description of colors and why they work>",
+  "occasion_notes": "<why this works for the occasion>",
+  "product_recommendations": [
+    {
+      "item": "<item name>",
+      "type": "<clothing type>",
+      "brand": "<suggested brand>",
+      "description": "<description>",
+      "price": "<estimated price>",
+      "reason": "<why recommended>"
+    }
+  ]
+}
+2025-11-22 10:38:26,566 - application - INFO - ------------------------------------------------------------
+2025-11-22 10:38:42,447 - application - INFO - GPT-4 Response received and extracted
+2025-11-22 10:38:42,447 - application - INFO - Outfit Description (first 500 chars): {
+  "outfit_concept": "Modern Chic Date Night",
+  "items": [
+    {
+      "type": "Top",
+      "description": "A sleek, satin camisole with a subtle sheen",
+      "color": "Champagne",
+      "style_notes": "The satin finish adds elegance without being overly formal."
+    },
+    {
+      "type": "Bottom",
+      "description": "High-waisted, tailored black trousers",
+      "color": "Black",
+      "style_notes": "Provides a sophisticated balance to the shiny top."
+    },
+    {
+      "type": "Shoes",
+...
+2025-11-22 10:38:42,447 - application - INFO - Background selected: upscale restaurant interior with romantic lighting
+2025-11-22 10:38:42,447 - application - INFO - Outfit details for image: A sleek, satin camisole with a subtle sheen in Champagne High-waisted, tailored black trousers in Black Classic black pointed toe flats in Black Delicate gold pendant necklace in Gold Medium-sized black clutch in Black
+2025-11-22 10:54:38,409 - application - INFO - ============================================================
+2025-11-22 10:54:38,411 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 10:54:38,411 - application - INFO - ============================================================
+2025-11-22 10:54:38,413 - application - INFO - Parameters - Occasion: Party, Budget: 
+2025-11-22 10:54:49,431 - application - INFO - Rating analysis completed successfully
+2025-11-22 10:55:43,061 - application - INFO - ============================================================
+2025-11-22 10:55:43,061 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 10:55:43,061 - application - INFO - ============================================================
+2025-11-22 10:55:43,063 - application - INFO - Parameters:
+2025-11-22 10:55:43,063 - application - INFO -   - Occasion: Party
+2025-11-22 10:55:43,063 - application - INFO -   - Wow Factor: 5
+2025-11-22 10:55:43,063 - application - INFO -   - Brands: []
+2025-11-22 10:55:43,063 - application - INFO -   - Budget: Above $500
+2025-11-22 10:55:43,063 - application - INFO -   - Conditions: 
+2025-11-22 10:55:43,064 - application - INFO -   - User image provided: True
+2025-11-22 10:55:43,064 - application - INFO - ------------------------------------------------------------
+2025-11-22 10:55:43,064 - application - INFO - GPT-4 OUTFIT DESCRIPTION PROMPT:
+2025-11-22 10:55:43,064 - application - INFO - Create a detailed outfit recommendation for Party.
+
+Style level: 5/10 (balanced, stylish, and modern)
+Preferences: within a budget of Above $500
+
+
+Provide:
+1. Complete outfit description (top, bottom, shoes, accessories)
+2. Color palette and why it works
+3. Style notes and occasion appropriateness
+4. 5-8 specific product recommendations with:
+   - Item type and description
+   - Estimated price
+   - Why it fits the outfit
+   
+Format as JSON:
+{
+  "outfit_concept": "<overall concept and inspiration>",
+  "items": [
+    {
+      "type": "<item type>",
+      "description": "<detailed description>",
+      "color": "<color>",
+      "style_notes": "<why this works>"
+    }
+  ],
+  "color_palette": "<description of colors and why they work>",
+  "occasion_notes": "<why this works for the occasion>",
+  "product_recommendations": [
+    {
+      "item": "<item name>",
+      "type": "<clothing type>",
+      "brand": "<suggested brand>",
+      "description": "<description>",
+      "price": "<estimated price>",
+      "reason": "<why recommended>"
+    }
+  ]
+}
+2025-11-22 10:55:43,064 - application - INFO - ------------------------------------------------------------
+2025-11-22 10:55:58,037 - application - INFO - GPT-4 Response received and extracted
+2025-11-22 10:55:58,037 - application - INFO - Outfit Description (first 500 chars): 
+{
+  "outfit_concept": "Chic and Modern Glam",
+  "items": [
+    {
+      "type": "Top",
+      "description": "Sequin camisole with thin straps",
+      "color": "Champagne gold",
+      "style_notes": "Adds sparkle and elegance, perfect for evening gatherings."
+    },
+    {
+      "type": "Bottom",
+      "description": "High-waisted black satin trousers",
+      "color": "Black",
+      "style_notes": "Provides a sleek contrast to the top, balancing the outfit."
+    },
+    {
+      "type": "Shoes",
+   ...
+2025-11-22 10:55:58,037 - application - INFO - Background selected: elegant neutral backdrop with natural lighting
+2025-11-22 10:55:58,038 - application - INFO - Outfit details for image: Sequin camisole with thin straps in Champagne gold High-waisted black satin trousers in Black Strappy high-heeled sandals in Metallic gold Delicate gold hoop earrings and bracelet in Gold Miniature black clutch with gold accents in Black and gold
+2025-11-22 10:59:26,018 - application - INFO - ============================================================
+2025-11-22 10:59:26,019 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 10:59:26,019 - application - INFO - ============================================================
+2025-11-22 10:59:26,019 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 10:59:26,019 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 10:59:26,019 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 10:59:26,019 - application - INFO - ============================================================
+2025-11-22 11:02:11,173 - application - INFO - ============================================================
+2025-11-22 11:02:11,173 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 11:02:11,173 - application - INFO - ============================================================
+2025-11-22 11:02:11,173 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 11:02:11,173 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 11:02:11,173 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 11:02:11,173 - application - INFO - ============================================================
+2025-11-22 11:08:04,317 - application - INFO - Like received - Submission: e0874043-62b2-4da8-9483-299a58e5d50a
+2025-11-22 11:08:06,195 - application - INFO - Like received - Submission: 636d3e9a-8e2f-42f2-9318-b7768be76ff3
+2025-11-22 11:10:55,185 - application - INFO - ============================================================
+2025-11-22 11:10:55,185 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 11:10:55,185 - application - INFO - ============================================================
+2025-11-22 11:10:55,185 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 11:10:55,185 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 11:10:55,185 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 11:10:55,185 - application - INFO - ============================================================
+2025-11-22 11:11:16,211 - application - INFO - ============================================================
+2025-11-22 11:11:16,211 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 11:11:16,212 - application - INFO - ============================================================
+2025-11-22 11:11:16,212 - application - INFO - Parameters - Occasion: Party, Budget: 
+2025-11-22 11:11:30,942 - application - INFO - Rating analysis completed successfully
+2025-11-22 11:11:58,441 - application - INFO - ============================================================
+2025-11-22 11:11:58,441 - application - INFO - FASHION ARENA SUBMISSION REQUEST
+2025-11-22 11:11:58,441 - application - INFO - ============================================================
+2025-11-22 11:11:58,442 - application - INFO - Submission - Title: My Party Outfit, Occasion: Party, Source: rater
+2025-11-22 11:11:58,448 - application - INFO - Submission successful - ID: ce99a36c-1589-4ffb-9a64-063fd73dabc1
+2025-11-22 11:12:21,149 - application - INFO - ============================================================
+2025-11-22 11:12:21,149 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 11:12:21,149 - application - INFO - ============================================================
+2025-11-22 11:12:21,150 - application - INFO - Parameters:
+2025-11-22 11:12:21,150 - application - INFO -   - Occasion: Wedding
+2025-11-22 11:12:21,150 - application - INFO -   - Wow Factor: 5
+2025-11-22 11:12:21,150 - application - INFO -   - Brands: []
+2025-11-22 11:12:21,150 - application - INFO -   - Budget: 
+2025-11-22 11:12:21,150 - application - INFO -   - Conditions: 
+2025-11-22 11:12:21,150 - application - INFO -   - User image provided: True
+2025-11-22 11:12:21,150 - application - INFO - ------------------------------------------------------------
+2025-11-22 11:12:21,150 - application - INFO - GPT-4 OUTFIT DESCRIPTION PROMPT:
+2025-11-22 11:12:21,150 - application - INFO - Create a detailed outfit recommendation for Wedding.
+
+Style level: 5/10 (balanced, stylish, and modern)
+Preferences:
+
+
+Provide:
+1. Complete outfit description (top, bottom, shoes, accessories)
+2. Color palette and why it works
+3. Style notes and occasion appropriateness
+4. 5-8 specific product recommendations with:
+   - Item type and description
+   - Estimated price
+   - Why it fits the outfit
+   
+Format as JSON:
+{
+  "outfit_concept": "<overall concept and inspiration>",
+  "items": [
+    {
+      "type": "<item type>",
+      "description": "<detailed description>",
+      "color": "<color>",
+      "style_notes": "<why this works>"
+    }
+  ],
+  "color_palette": "<description of colors and why they work>",
+  "occasion_notes": "<why this works for the occasion>",
+  "product_recommendations": [
+    {
+      "item": "<item name>",
+      "type": "<clothing type>",
+      "brand": "<suggested brand>",
+      "description": "<description>",
+      "price": "<estimated price>",
+      "reason": "<why recommended>"
+    }
+  ]
+}
+2025-11-22 11:12:21,150 - application - INFO - ------------------------------------------------------------
+2025-11-22 11:12:35,649 - application - INFO - GPT-4 Response received and extracted
+2025-11-22 11:12:35,649 - application - INFO - Outfit Description (first 500 chars): {
+  "outfit_concept": "Chic Evening Elegance",
+  "items": [
+    {
+      "type": "Top",
+      "description": "Silk camisole with a subtle sheen and delicate straps",
+      "color": "Champagne",
+      "style_notes": "The silk texture adds a touch of luxury while the simple cut keeps it understated."
+    },
+    {
+      "type": "Bottom",
+      "description": "High-waisted tailored trousers with a tapered leg",
+      "color": "Black",
+      "style_notes": "Creates a sleek silhouette and balances the ...
+2025-11-22 11:12:35,650 - application - INFO - Background selected: elegant neutral backdrop with natural lighting
+2025-11-22 11:12:35,650 - application - INFO - Outfit details for image: Silk camisole with a subtle sheen and delicate straps in Champagne High-waisted tailored trousers with a tapered leg in Black Classic black pumps with a pointed toe in Black Small black clutch with a matte finish in Black Delicate gold necklace in Gold
+2025-11-22 11:13:05,186 - application - INFO - ============================================================
+2025-11-22 11:13:05,187 - application - INFO - FASHION ARENA SUBMISSION REQUEST
+2025-11-22 11:13:05,187 - application - INFO - ============================================================
+2025-11-22 11:13:05,188 - application - INFO - Submission - Title: AI-Generated Wedding Outfit, Occasion: Wedding, Source: generator
+2025-11-22 11:13:05,194 - application - INFO - Submission successful - ID: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:42,418 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:42,663 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:42,879 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:43,079 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:43,462 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:43,695 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:43,894 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:44,094 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:13:44,295 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 11:20:25,889 - application - INFO - ============================================================
+2025-11-22 11:20:25,889 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 11:20:25,889 - application - INFO - ============================================================
+2025-11-22 11:20:25,889 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 11:20:25,889 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 11:20:25,889 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 11:20:25,889 - application - INFO - ============================================================
+2025-11-22 11:24:40,689 - application - INFO - Like received - Submission: ce99a36c-1589-4ffb-9a64-063fd73dabc1
+2025-11-22 12:13:34,706 - application - INFO - ============================================================
+2025-11-22 12:13:34,706 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 12:13:34,706 - application - INFO - ============================================================
+2025-11-22 12:13:34,706 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 12:13:34,707 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 12:13:34,707 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 12:13:34,707 - application - INFO - ============================================================
+2025-11-22 12:23:52,486 - application - INFO - ============================================================
+2025-11-22 12:23:52,486 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 12:23:52,486 - application - INFO - ============================================================
+2025-11-22 12:23:52,486 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 12:23:52,487 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 12:23:52,487 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 12:23:52,487 - application - INFO - ============================================================
+2025-11-22 14:08:31,834 - application - INFO - ============================================================
+2025-11-22 14:08:31,834 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 14:08:31,834 - application - INFO - ============================================================
+2025-11-22 14:08:31,834 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 14:08:31,834 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 14:08:31,834 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 14:08:31,834 - application - INFO - ============================================================
+2025-11-22 14:09:59,176 - application - INFO - ============================================================
+2025-11-22 14:09:59,176 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 14:09:59,176 - application - INFO - ============================================================
+2025-11-22 14:09:59,178 - application - INFO - Parameters - Occasion: Business, Budget: 
+2025-11-22 14:10:13,819 - application - INFO - Rating analysis completed successfully
+2025-11-22 14:10:30,951 - application - INFO - ============================================================
+2025-11-22 14:10:30,951 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 14:10:30,951 - application - INFO - ============================================================
+2025-11-22 14:10:30,953 - application - INFO - Parameters:
+2025-11-22 14:10:30,953 - application - INFO -   - Occasion: Business
+2025-11-22 14:10:30,953 - application - INFO -   - Wow Factor: 5
+2025-11-22 14:10:30,953 - application - INFO -   - Brands: []
+2025-11-22 14:10:30,953 - application - INFO -   - Budget: 
+2025-11-22 14:10:30,953 - application - INFO -   - Conditions: 
+2025-11-22 14:10:30,953 - application - INFO -   - User image provided: True
+2025-11-22 14:10:30,953 - application - INFO - ------------------------------------------------------------
+2025-11-22 14:10:30,953 - application - INFO - GPT-4 OUTFIT DESCRIPTION PROMPT:
+2025-11-22 14:10:30,953 - application - INFO - Create a detailed outfit recommendation for Business.
+
+Style level: 5/10 (balanced, stylish, and modern)
+Preferences:
+
+
+Provide:
+1. Complete outfit description (top, bottom, shoes, accessories)
+2. Color palette and why it works
+3. Style notes and occasion appropriateness
+4. 5-8 specific product recommendations with:
+   - Item type and description
+   - Estimated price
+   - Why it fits the outfit
+   
+Format as JSON:
+{
+  "outfit_concept": "<overall concept and inspiration>",
+  "items": [
+    {
+      "type": "<item type>",
+      "description": "<detailed description>",
+      "color": "<color>",
+      "style_notes": "<why this works>"
+    }
+  ],
+  "color_palette": "<description of colors and why they work>",
+  "occasion_notes": "<why this works for the occasion>",
+  "product_recommendations": [
+    {
+      "item": "<item name>",
+      "type": "<clothing type>",
+      "brand": "<suggested brand>",
+      "description": "<description>",
+      "price": "<estimated price>",
+      "reason": "<why recommended>"
+    }
+  ]
+}
+2025-11-22 14:10:30,954 - application - INFO - ------------------------------------------------------------
+2025-11-22 14:10:47,382 - application - INFO - GPT-4 Response received and extracted
+2025-11-22 14:10:47,383 - application - INFO - Outfit Description (first 500 chars): {
+  "outfit_concept": "Modern Business Casual with a Sleek Minimalist Edge",
+  "items": [
+    {
+      "type": "Top",
+      "description": "Silk button-up blouse with a subtle sheen.",
+      "color": "Light blush pink",
+      "style_notes": "Offers a polished, professional look with a hint of sophistication."
+    },
+    {
+      "type": "Bottom",
+      "description": "Slim-fit black trousers.",
+      "color": "Black",
+      "style_notes": "Provides a sleek silhouette, perfect for maintaining a bal...
+2025-11-22 14:10:47,383 - application - INFO - Background selected: elegant neutral backdrop with natural lighting
+2025-11-22 14:10:47,383 - application - INFO - Outfit details for image: Silk button-up blouse with a subtle sheen. in Light blush pink Slim-fit black trousers. in Black Pointed-toe flats with a small heel. in Nude Silver minimalist necklace and matching stud earrings. in Silver Structured tote bag. in Beige
+2025-11-22 14:13:59,569 - application - INFO - ============================================================
+2025-11-22 14:13:59,569 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 14:13:59,569 - application - INFO - ============================================================
+2025-11-22 14:13:59,569 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 14:13:59,569 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 14:13:59,569 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 14:13:59,569 - application - INFO - ============================================================
+2025-11-22 14:14:53,775 - application - INFO - Like received - Submission: f67a08e6-bed5-489a-87a6-89079bdef834
+2025-11-22 14:16:21,331 - application - INFO - ============================================================
+2025-11-22 14:16:21,332 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 14:16:21,332 - application - INFO - ============================================================
+2025-11-22 14:16:21,334 - application - INFO - Parameters - Occasion: Wedding, Budget: Above $500
+2025-11-22 14:16:32,858 - application - INFO - Rating analysis completed successfully
+2025-11-22 14:16:48,773 - application - INFO - ============================================================
+2025-11-22 14:16:48,773 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 14:16:48,774 - application - INFO - ============================================================
+2025-11-22 14:16:48,775 - application - INFO - Parameters:
+2025-11-22 14:16:48,775 - application - INFO -   - Occasion: Wedding
+2025-11-22 14:16:48,775 - application - INFO -   - Wow Factor: 5
+2025-11-22 14:16:48,775 - application - INFO -   - Brands: []
+2025-11-22 14:16:48,775 - application - INFO -   - Budget: Above $500
+2025-11-22 14:16:48,775 - application - INFO -   - Conditions: 
+2025-11-22 14:16:48,775 - application - INFO -   - User image provided: True
+2025-11-22 14:16:48,776 - application - INFO - ------------------------------------------------------------
+2025-11-22 14:16:48,776 - application - INFO - GPT-4 OUTFIT DESCRIPTION PROMPT:
+2025-11-22 14:16:48,776 - application - INFO - Create a detailed outfit recommendation for Wedding.
+
+Style level: 5/10 (balanced, stylish, and modern)
+Preferences: within a budget of Above $500
+
+
+Provide:
+1. Complete outfit description (top, bottom, shoes, accessories)
+2. Color palette and why it works
+3. Style notes and occasion appropriateness
+4. 5-8 specific product recommendations with:
+   - Item type and description
+   - Estimated price
+   - Why it fits the outfit
+   
+Format as JSON:
+{
+  "outfit_concept": "<overall concept and inspiration>",
+  "items": [
+    {
+      "type": "<item type>",
+      "description": "<detailed description>",
+      "color": "<color>",
+      "style_notes": "<why this works>"
+    }
+  ],
+  "color_palette": "<description of colors and why they work>",
+  "occasion_notes": "<why this works for the occasion>",
+  "product_recommendations": [
+    {
+      "item": "<item name>",
+      "type": "<clothing type>",
+      "brand": "<suggested brand>",
+      "description": "<description>",
+      "price": "<estimated price>",
+      "reason": "<why recommended>"
+    }
+  ]
+}
+2025-11-22 14:16:48,776 - application - INFO - ------------------------------------------------------------
+2025-11-22 14:17:03,701 - application - INFO - GPT-4 Response received and extracted
+2025-11-22 14:17:03,702 - application - INFO - Outfit Description (first 500 chars): {"outfit_concept": "Modern Elegance for a Wedding",
+ "items": [
+   {
+      "type": "Blazer",
+      "description": "Slim-fit light blue blazer with a subtle texture.",
+      "color": "Light Blue",
+      "style_notes": "Adds a modern twist to the classic suit look, ideal for a stylish and balanced appearance."
+   },
+   {
+      "type": "Shirt",
+      "description": "White cotton dress shirt with a slight sheen.",
+      "color": "White",
+      "style_notes": "A classic staple that works well with th...
+2025-11-22 14:17:03,702 - application - INFO - Background selected: elegant neutral backdrop with natural lighting
+2025-11-22 14:17:03,702 - application - INFO - Outfit details for image: Slim-fit light blue blazer with a subtle texture. in Light Blue White cotton dress shirt with a slight sheen. in White Tailored beige chinos. in Beige Brown leather derbies. in Brown Minimalist black leather strap watch. in Black
+2025-11-22 15:26:13,366 - application - INFO - ============================================================
+2025-11-22 15:26:13,366 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 15:26:13,366 - application - INFO - ============================================================
+2025-11-22 15:26:13,366 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 15:26:13,366 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 15:26:13,366 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 15:26:13,367 - application - INFO - ============================================================
+2025-11-22 15:26:13,367 - application - INFO - ✓ JWT authentication configured
+2025-11-22 15:26:13,367 - application - INFO - ✓ Rate limiting configured
+2025-11-22 15:26:13,367 - application - INFO - ✓ Security headers configured
+2025-11-22 15:26:13,368 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 15:26:13,368 - application - INFO - ============================================================
+2025-11-22 15:26:13,369 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 15:26:13,369 - application - INFO - ============================================================
+2025-11-22 15:28:50,544 - application - INFO - ============================================================
+2025-11-22 15:28:50,544 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 15:28:50,544 - application - INFO - ============================================================
+2025-11-22 15:28:50,544 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 15:28:50,544 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 15:28:50,544 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 15:28:50,544 - application - INFO - ============================================================
+2025-11-22 15:28:50,544 - application - INFO - ✓ JWT authentication configured
+2025-11-22 15:28:50,545 - application - INFO - ✓ Rate limiting configured
+2025-11-22 15:28:50,545 - application - INFO - ✓ Security headers configured
+2025-11-22 15:28:50,546 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 15:28:50,546 - application - INFO - ============================================================
+2025-11-22 15:28:50,546 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 15:28:50,546 - application - INFO - ============================================================
+2025-11-22 16:39:26,363 - application - INFO - ============================================================
+2025-11-22 16:39:26,363 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 16:39:26,363 - application - INFO - ============================================================
+2025-11-22 16:39:26,363 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 16:39:26,363 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 16:39:26,363 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 16:39:26,363 - application - INFO - ============================================================
+2025-11-22 16:39:26,363 - application - INFO - ✓ JWT authentication configured
+2025-11-22 16:39:26,409 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 16:39:26,409 - application - INFO - ✓ Rate limiting configured
+2025-11-22 16:39:26,409 - application - INFO - ✓ Security headers configured
+2025-11-22 16:39:26,410 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 16:39:26,410 - application - INFO - ============================================================
+2025-11-22 16:39:26,410 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 16:39:26,410 - application - INFO - ============================================================
+2025-11-22 16:41:41,662 - application - INFO - ============================================================
+2025-11-22 16:41:41,662 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 16:41:41,662 - application - INFO - ============================================================
+2025-11-22 16:41:41,662 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 16:41:41,662 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 16:41:41,662 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 16:41:41,662 - application - INFO - ============================================================
+2025-11-22 16:41:41,662 - application - INFO - ✓ JWT authentication configured
+2025-11-22 16:41:41,707 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 16:41:41,707 - application - INFO - ✓ Rate limiting configured
+2025-11-22 16:41:41,708 - application - INFO - ✓ Security headers configured
+2025-11-22 16:41:41,709 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 16:41:41,709 - application - INFO - ============================================================
+2025-11-22 16:41:41,709 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 16:41:41,709 - application - INFO - ============================================================
+2025-11-22 18:28:18,993 - application - INFO - ============================================================
+2025-11-22 18:28:18,993 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 18:28:18,993 - application - INFO - ============================================================
+2025-11-22 18:28:18,993 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 18:28:18,993 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 18:28:18,993 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 18:28:18,993 - application - INFO - ============================================================
+2025-11-22 18:28:18,993 - application - INFO - ✓ JWT authentication configured
+2025-11-22 18:28:19,039 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 18:28:19,040 - application - INFO - ✓ Rate limiting configured
+2025-11-22 18:28:19,040 - application - INFO - ✓ Security headers configured
+2025-11-22 18:28:19,041 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 18:28:19,041 - application - INFO - ============================================================
+2025-11-22 18:28:19,041 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 18:28:19,041 - application - INFO - ============================================================
+2025-11-22 18:55:57,749 - application - INFO - ============================================================
+2025-11-22 18:55:57,750 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 18:55:57,750 - application - INFO - ============================================================
+2025-11-22 18:55:57,750 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 18:55:57,750 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 18:55:57,750 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 18:55:57,750 - application - INFO - ============================================================
+2025-11-22 18:55:57,750 - application - INFO - ✓ JWT authentication configured
+2025-11-22 18:55:57,794 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 18:55:57,794 - application - INFO - ✓ Rate limiting configured
+2025-11-22 18:55:57,794 - application - INFO - ✓ Security headers configured
+2025-11-22 18:55:57,795 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 18:55:57,795 - application - INFO - ============================================================
+2025-11-22 18:55:57,795 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 18:55:57,795 - application - INFO - ============================================================
+2025-11-22 19:08:51,401 - application - INFO - ============================================================
+2025-11-22 19:08:51,402 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 19:08:51,402 - application - INFO - ============================================================
+2025-11-22 19:08:51,402 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 19:08:51,402 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 19:08:51,402 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 19:08:51,402 - application - INFO - ============================================================
+2025-11-22 19:08:51,402 - application - INFO - ✓ JWT authentication configured
+2025-11-22 19:08:51,447 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 19:08:51,447 - application - INFO - ✓ Rate limiting configured
+2025-11-22 19:08:51,447 - application - INFO - ✓ Security headers configured
+2025-11-22 19:08:51,448 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 19:08:51,448 - application - INFO - ============================================================
+2025-11-22 19:08:51,448 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 19:08:51,448 - application - INFO - ============================================================
+2025-11-22 19:13:57,150 - application - INFO - ============================================================
+2025-11-22 19:13:57,151 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 19:13:57,151 - application - INFO - ============================================================
+2025-11-22 19:13:57,151 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 19:13:57,151 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 19:13:57,151 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 19:13:57,151 - application - INFO - ============================================================
+2025-11-22 19:13:57,151 - application - INFO - ✓ JWT authentication configured
+2025-11-22 19:13:57,195 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 19:13:57,195 - application - INFO - ✓ Rate limiting configured
+2025-11-22 19:13:57,195 - application - INFO - ✓ Security headers configured
+2025-11-22 19:13:57,196 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 19:13:57,196 - application - INFO - ============================================================
+2025-11-22 19:13:57,196 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 19:13:57,196 - application - INFO - ============================================================
+2025-11-22 19:15:21,079 - application - INFO - ============================================================
+2025-11-22 19:15:21,080 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 19:15:21,080 - application - INFO - ============================================================
+2025-11-22 19:15:21,080 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 19:15:21,080 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 19:15:21,080 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 19:15:21,080 - application - INFO - ============================================================
+2025-11-22 19:15:21,080 - application - INFO - ✓ JWT authentication configured
+2025-11-22 19:15:21,125 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 19:15:21,125 - application - INFO - ✓ Rate limiting configured
+2025-11-22 19:15:21,125 - application - INFO - ✓ Security headers configured
+2025-11-22 19:15:21,126 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 19:15:21,126 - application - INFO - ============================================================
+2025-11-22 19:15:21,126 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 19:15:21,126 - application - INFO - ============================================================
+2025-11-22 19:17:45,198 - application - INFO - ============================================================
+2025-11-22 19:17:45,198 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 19:17:45,198 - application - INFO - ============================================================
+2025-11-22 19:17:45,206 - application - INFO - Parameters - Occasion: casual, Budget: $50-$100
+2025-11-22 19:17:54,686 - application - INFO - Rating analysis completed successfully
+2025-11-22 19:19:54,258 - application - INFO - ============================================================
+2025-11-22 19:19:54,259 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 19:19:54,259 - application - INFO - ============================================================
+2025-11-22 19:19:54,259 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 19:19:54,259 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 19:19:54,259 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 19:19:54,259 - application - INFO - ============================================================
+2025-11-22 19:19:54,259 - application - INFO - ✓ JWT authentication configured
+2025-11-22 19:19:54,303 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 19:19:54,303 - application - INFO - ✓ Rate limiting configured
+2025-11-22 19:19:54,304 - application - INFO - ✓ Security headers configured
+2025-11-22 19:19:54,305 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 19:19:54,305 - application - INFO - ============================================================
+2025-11-22 19:19:54,305 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 19:19:54,305 - application - INFO - ============================================================
+2025-11-22 19:34:07,220 - application - INFO - ============================================================
+2025-11-22 19:34:07,221 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 19:34:07,221 - application - INFO - ============================================================
+2025-11-22 19:36:17,534 - application - INFO - ============================================================
+2025-11-22 19:36:17,535 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 19:36:17,535 - application - INFO - ============================================================
+2025-11-22 19:36:17,539 - application - INFO - Parameters - Occasion: party, Budget: $100-$200
+2025-11-22 19:36:28,849 - application - INFO - Rating analysis completed successfully
+2025-11-22 19:36:44,007 - application - INFO - ============================================================
+2025-11-22 19:36:44,008 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 19:36:44,008 - application - INFO - ============================================================
+2025-11-22 19:37:59,814 - application - INFO - ============================================================
+2025-11-22 19:37:59,815 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 19:37:59,815 - application - INFO - ============================================================
+2025-11-22 19:37:59,818 - application - INFO - Parameters:
+2025-11-22 19:37:59,818 - application - INFO -   - Occasion: party
+2025-11-22 19:37:59,818 - application - INFO -   - Wow Factor: 5
+2025-11-22 19:37:59,818 - application - INFO -   - Brands: []
+2025-11-22 19:37:59,818 - application - INFO -   - Budget: 
+2025-11-22 19:37:59,818 - application - INFO -   - Conditions: 
+2025-11-22 19:37:59,818 - application - INFO -   - User image provided: True
+2025-11-22 19:37:59,818 - application - INFO - ------------------------------------------------------------
+2025-11-22 19:37:59,818 - application - INFO - GPT-4 OUTFIT DESCRIPTION PROMPT:
+2025-11-22 19:37:59,818 - application - INFO - Create a detailed outfit recommendation for party.
+
+Style level: 5/10 (balanced, stylish, and modern)
+Preferences:
+
+
+Provide:
+1. Complete outfit description (top, bottom, shoes, accessories)
+2. Color palette and why it works
+3. Style notes and occasion appropriateness
+4. 5-8 specific product recommendations with:
+   - Item type and description
+   - Estimated price
+   - Why it fits the outfit
+   
+Format as JSON:
+{
+  "outfit_concept": "<overall concept and inspiration>",
+  "items": [
+    {
+      "type": "<item type>",
+      "description": "<detailed description>",
+      "color": "<color>",
+      "style_notes": "<why this works>"
+    }
+  ],
+  "color_palette": "<description of colors and why they work>",
+  "occasion_notes": "<why this works for the occasion>",
+  "product_recommendations": [
+    {
+      "item": "<item name>",
+      "type": "<clothing type>",
+      "brand": "<suggested brand>",
+      "description": "<description>",
+      "price": "<estimated price>",
+      "reason": "<why recommended>"
+    }
+  ]
+}
+2025-11-22 19:37:59,818 - application - INFO - ------------------------------------------------------------
+2025-11-22 19:38:13,179 - application - INFO - GPT-4 Response received and extracted
+2025-11-22 19:38:13,179 - application - INFO - Outfit Description (first 500 chars): {
+  "outfit_concept": "Modern Glam with a Touch of Sparkle",
+  "items": [
+    {
+      "type": "Top",
+      "description": "Sequin cami top",
+      "color": "Champagne",
+      "style_notes": "Adds a touch of sparkle, perfect for a party atmosphere."
+    },
+    {
+      "type": "Bottom",
+      "description": "High-waisted tailored trousers",
+      "color": "Black",
+      "style_notes": "Creates a balanced, sleek silhouette and contrast with the top."
+    },
+    {
+      "type": "Shoes",
+      "descr...
+2025-11-22 19:38:13,180 - application - INFO - Background selected: elegant neutral backdrop with natural lighting
+2025-11-22 19:38:13,180 - application - INFO - Outfit details for image: Sequin cami top in Champagne High-waisted tailored trousers in Black Strappy heels in Nude Statement earrings in Gold
+2025-11-22 19:38:43,283 - application - INFO - ============================================================
+2025-11-22 19:38:43,284 - application - INFO - FASHION ARENA SUBMISSION REQUEST
+2025-11-22 19:38:43,284 - application - INFO - ============================================================
+2025-11-22 19:38:43,284 - application - INFO - Submission - Title: AI-Generated Party Outfit, Occasion: Party, Source: generator
+2025-11-22 19:38:43,292 - application - INFO - Submission successful - ID: d7baae89-249d-4d76-819a-5a21a4134e49
+2025-11-22 19:38:53,192 - application - INFO - Like received - Submission: 636d3e9a-8e2f-42f2-9318-b7768be76ff3

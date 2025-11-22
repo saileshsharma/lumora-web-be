@@ -1,0 +1,106 @@
+{
+  "timestamp": "2025-11-21T13:53:58.194566",
+  "summary": {
+    "total": 19,
+    "passed": 18,
+    "failed": 1,
+    "success_rate": 94.73684210526315
+  },
+  "tests": [
+    {
+      "name": "Backend Server Health",
+      "status": true,
+      "details": "Status: healthy"
+    },
+    {
+      "name": "Frontend Server",
+      "status": true,
+      "details": "Status code: 200"
+    },
+    {
+      "name": "CORS Preflight",
+      "status": true,
+      "details": "Origin: http://localhost:5173"
+    },
+    {
+      "name": "CORS Methods",
+      "status": true,
+      "details": "Methods: DELETE, GET, OPTIONS, POST, PUT"
+    },
+    {
+      "name": "Get Arena Submissions",
+      "status": true,
+      "details": "Found 0 submissions"
+    },
+    {
+      "name": "Get Arena Leaderboard",
+      "status": true,
+      "details": "Entries: 0"
+    },
+    {
+      "name": "Rate Outfit - Validation (missing data)",
+      "status": true,
+      "details": "Correctly rejects empty request: 400"
+    },
+    {
+      "name": "Rate Outfit - Image Validation",
+      "status": true,
+      "details": "Correctly rejects invalid image: 500"
+    },
+    {
+      "name": "Rate Outfit - Endpoint Structure",
+      "status": true,
+      "details": "Status: 500"
+    },
+    {
+      "name": "Generate Outfit - Validation",
+      "status": false,
+      "details": "Error: HTTPConnectionPool(host='localhost', port=5001): Read timed out. (read timeout=10)"
+    },
+    {
+      "name": "Generate Outfit - Image Validation",
+      "status": true,
+      "details": "Correctly rejects invalid image: 500"
+    },
+    {
+      "name": "Generate Outfit - Endpoint Structure",
+      "status": true,
+      "details": "Status: 500"
+    },
+    {
+      "name": "Health Response Format",
+      "status": true,
+      "details": "Contains required fields: status=True, message=True"
+    },
+    {
+      "name": "Arena Response Format",
+      "status": true,
+      "details": "Contains required fields: submissions=True, success=True"
+    },
+    {
+      "name": "404 Error Handling",
+      "status": true,
+      "details": "Returns 404 for non-existent endpoint: 404"
+    },
+    {
+      "name": "Invalid JSON Handling",
+      "status": true,
+      "details": "Handles invalid JSON: 500"
+    },
+    {
+      "name": "Environment Variable: OPENAI_API_KEY",
+      "status": true,
+      "details": "Length: 164 chars"
+    },
+    {
+      "name": "Environment Variable: FAL_API_KEY",
+      "status": true,
+      "details": "Length: 69 chars"
+    },
+    {
+      "name": "Environment Variable: NANOBANANA_API_KEY",
+      "status": true,
+      "details": "Length: 32 chars"
+    }
+  ]
+}

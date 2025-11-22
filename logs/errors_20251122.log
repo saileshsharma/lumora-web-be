@@ -1,0 +1,2 @@
+2025-11-22 19:34:07,225 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 19:36:44,009 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
