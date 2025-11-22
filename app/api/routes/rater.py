@@ -7,8 +7,9 @@ from flask import Blueprint, request, jsonify
 import logging
 import json
 
-from app.services import OpenAIService, ImageService
+from app.services import OpenAIService, ImageService, UserStatsService
 from app.utils.exceptions import ValidationError, OpenAIServiceError, APIException
+from app.utils.auth_utils import get_user_from_token
 
 logger = logging.getLogger(__name__)
 
@@ -57,6 +58,17 @@ def rate_outfit():
         )
 
         logger.info("Outfit rated successfully")
+
+        # Track user statistics
+        user_info = get_user_from_token()
+        if user_info:
+            UserStatsService.increment_outfit_rated(
+                user_id=user_info['user_id'],
+                username=user_info['username'],
+                email=user_info['email']
+            )
+            logger.info(f"Tracked outfit rating for user: {user_info['username']}")
+
         logger.info("="*60)
 
         # Frontend expects data as JSON string

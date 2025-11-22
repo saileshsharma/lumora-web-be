@@ -11,7 +11,8 @@ from app.services import (
     OpenAIService,
     ImageService,
     FALService,
-    NanoBananaService
+    NanoBananaService,
+    UserStatsService
 )
 from app.config.constants import BACKGROUND_MAP, DEFAULT_BACKGROUND
 from app.utils.exceptions import (
@@ -20,6 +21,7 @@ from app.utils.exceptions import (
     APIException,
     ConfigurationError
 )
+from app.utils.auth_utils import get_user_from_token
 
 logger = logging.getLogger(__name__)
 
@@ -133,6 +135,16 @@ def generate_outfit():
         )
 
         logger.info("Outfit image generated successfully")
+
+        # Track user statistics
+        user_info = get_user_from_token()
+        if user_info:
+            UserStatsService.increment_outfit_generated(
+                user_id=user_info['user_id'],
+                username=user_info['username'],
+                email=user_info['email']
+            )
+            logger.info(f"Tracked outfit generation for user: {user_info['username']}")
 
         # Format response to match frontend expectations
         result_data = json.dumps({

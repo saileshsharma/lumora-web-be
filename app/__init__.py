@@ -11,7 +11,7 @@ from datetime import datetime
 
 from app.config.settings import Config
 from app.api.middlewares.error_handler import register_error_handlers
-from app.api.routes import health_bp, rater_bp, generator_bp
+from app.api.routes import health_bp, rater_bp, generator_bp, user_bp
 
 
 def create_app(config=None):
@@ -50,6 +50,7 @@ def create_app(config=None):
     app.register_blueprint(health_bp, url_prefix='/api')
     app.register_blueprint(rater_bp, url_prefix='/api')
     app.register_blueprint(generator_bp, url_prefix='/api')
+    app.register_blueprint(user_bp, url_prefix='/api')
 
     # Register error handlers
     register_error_handlers(app)
