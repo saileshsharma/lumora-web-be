@@ -428,7 +428,11 @@ Photorealistic, professional fashion photography, magazine quality, 3/4 body sho
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    return jsonify({"status": "healthy", "message": "Outfit Assistant API is running"})
+    return jsonify({
+        "status": "healthy",
+        "service": "AI Outfit Assistant API",
+        "timestamp": datetime.utcnow().isoformat() + "Z"
+    })
 
 @app.route('/api/rate-outfit', methods=['POST'])
 @limiter.limit(RATE_LIMITS["ai_rating"])
@@ -451,7 +455,7 @@ def rate_outfit():
             })
         except ValidationError as e:
             error_logger.error(f"Validation error: {e.messages}")
-            return jsonify({"error": "Invalid input data", "details": e.messages}), 400
+            return jsonify({"success": False, "error": "Invalid input data", "details": e.messages}), 400
 
         # Extract parameters
         image_base64 = validated_data['photo']
@@ -461,13 +465,13 @@ def rate_outfit():
         # Additional image validation
         if not validate_image_data(image_base64):
             error_logger.error("Invalid image data format")
-            return jsonify({"error": "Invalid image data"}), 400
+            return jsonify({"success": False, "error": "Invalid image data"}), 400
 
         app_logger.info(f"Parameters - Occasion: {occasion}, Budget: {budget}")
 
         if not image_base64:
             error_logger.error("No image provided in request")
-            return jsonify({"error": "No image provided"}), 400
+            return jsonify({"success": False, "error": "No image provided"}), 400
         
         # Build the prompt for GPT-4 Vision
         budget_text = f" with a budget of {budget}" if budget else ""
@@ -549,7 +553,7 @@ Format your response as JSON with this structure:
     except Exception as e:
         error_logger.error(f"Error in rate_outfit: {str(e)}")
         error_logger.error(f"Traceback: {traceback.format_exc()}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/generate-outfit', methods=['POST'])
 @limiter.limit(RATE_LIMITS["ai_generation"])
@@ -573,7 +577,7 @@ def generate_outfit():
             })
         except ValidationError as e:
             error_logger.error(f"Validation error: {e.messages}")
-            return jsonify({"error": "Invalid input data", "details": e.messages}), 400
+            return jsonify({"success": False, "error": "Invalid input data", "details": e.messages}), 400
 
         # Extract parameters
         user_image = data.get('user_image', None)
@@ -680,13 +684,50 @@ Format as JSON:
             )
             api_logger.info("✅ GPT-4 API call SUCCESSFUL")
             api_logger.info(f"  Tokens used: {description_response.usage.total_tokens if hasattr(description_response, 'usage') else 'N/A'}")
+        except openai.AuthenticationError as e:
+            api_logger.error(f"❌ GPT-4 Authentication FAILED: {str(e)}")
+            error_logger.error(f"OpenAI Authentication Error: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "AI service authentication failed. Please contact support."
+            }), 503
+        except openai.RateLimitError as e:
+            api_logger.error(f"❌ GPT-4 Rate Limit EXCEEDED: {str(e)}")
+            error_logger.error(f"OpenAI Rate Limit Error: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "AI service is temporarily busy. Please try again in a moment."
+            }), 429
+        except openai.APIConnectionError as e:
+            api_logger.error(f"❌ GPT-4 Connection FAILED: {str(e)}")
+            error_logger.error(f"OpenAI Connection Error: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "Unable to connect to AI service. Please check your internet connection and try again."
+            }), 503
+        except openai.APIError as e:
+            api_logger.error(f"❌ GPT-4 API Error: {str(e)}")
+            error_logger.error(f"OpenAI API Error: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "AI service is currently unavailable. Please try again later."
+            }), 503
         except Exception as e:
             api_logger.error(f"❌ GPT-4 API call FAILED: {str(e)}")
-            error_logger.error(f"GPT-4 API Error in generate_outfit: {str(e)}")
-            raise
+            error_logger.error(f"Unexpected error in OpenAI call: {str(e)}")
+            return jsonify({
+                "success": False,
+                "error": "An unexpected error occurred. Please try again."
+            }), 500
 
         outfit_description = description_response.choices[0].message.content
         app_logger.info("GPT-4 Response received and extracted")
+
+        if not outfit_description:
+            error_logger.error("GPT-4 returned None or empty content")
+            error_logger.error(f"Full response: {description_response}")
+            raise ValueError("GPT-4 returned empty response")
+
         app_logger.info(f"Outfit Description (first 500 chars): {outfit_description[:500]}...")
 
         # Parse JSON response safely
@@ -758,7 +799,7 @@ Format as JSON:
     except Exception as e:
         error_logger.error(f"Error in generate_outfit: {str(e)}")
         error_logger.error(f"Traceback: {traceback.format_exc()}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/regenerate-outfit', methods=['POST'])
 def regenerate_outfit():
@@ -778,7 +819,7 @@ def regenerate_outfit():
         
     except Exception as e:
         print(f"Error in regenerate_outfit: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 # ============================================================================
 # FASHION ARENA ENDPOINTS
@@ -806,12 +847,12 @@ def submit_to_arena():
         user_id = data.get('user_id')
         
         if not photo:
-            return jsonify({"error": "No photo provided"}), 400
+            return jsonify({"success": False, "error": "No photo provided"}), 400
 
         # Validate photo data - reject local file paths
         if photo.startswith("file://"):
             app_logger.warning(f"Rejected submission with local file path")
-            return jsonify({"error": "Invalid photo data. Please use base64-encoded image data."}), 400
+            return jsonify({"success": False, "error": "Invalid photo data. Please use base64-encoded image data."}), 400
 
         app_logger.info(f"Submission - Title: {title}, Occasion: {occasion}, Source: {source_mode}")
 
@@ -834,7 +875,7 @@ def submit_to_arena():
         
     except Exception as e:
         app_logger.error(f"Error in submit_to_arena: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/submissions', methods=['GET'])
 @limiter.limit(RATE_LIMITS["api_read"])
@@ -872,7 +913,7 @@ def get_arena_submissions():
 
     except Exception as e:
         app_logger.error(f"Error in get_arena_submissions: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/leaderboard', methods=['GET'])
 def get_arena_leaderboard():
@@ -902,7 +943,7 @@ def get_arena_leaderboard():
 
     except Exception as e:
         app_logger.error(f"Error in get_arena_leaderboard: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/vote', methods=['POST'])
 @limiter.limit(RATE_LIMITS["user_action"])
@@ -919,13 +960,13 @@ def vote_on_submission():
         voter_id = data.get('voter_id')
         
         if not submission_id:
-            return jsonify({"error": "No submission_id provided"}), 400
+            return jsonify({"success": False, "error": "No submission_id provided"}), 400
         
         if vote_type not in ['upvote', 'downvote']:
-            return jsonify({"error": "Invalid vote_type. Must be 'upvote' or 'downvote'"}), 400
+            return jsonify({"success": False, "error": "Invalid vote_type. Must be 'upvote' or 'downvote'"}), 400
         
         if not (1 <= rating <= 10):
-            return jsonify({"error": "Rating must be between 1 and 10"}), 400
+            return jsonify({"success": False, "error": "Rating must be between 1 and 10"}), 400
         
         app_logger.info(f"Vote received - Submission: {submission_id}, Type: {vote_type}, Rating: {rating}")
         
@@ -938,7 +979,7 @@ def vote_on_submission():
         )
         
         if not updated_submission:
-            return jsonify({"error": "Submission not found"}), 404
+            return jsonify({"success": False, "error": "Submission not found"}), 404
         
         return jsonify({
             "success": True,
@@ -947,7 +988,7 @@ def vote_on_submission():
         
     except Exception as e:
         app_logger.error(f"Error in vote_on_submission: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/submission/<submission_id>', methods=['GET'])
 def get_submission_details(submission_id):
@@ -958,7 +999,7 @@ def get_submission_details(submission_id):
         submission = fashion_arena.get_submission_by_id(submission_id)
         
         if not submission:
-            return jsonify({"error": "Submission not found"}), 404
+            return jsonify({"success": False, "error": "Submission not found"}), 404
         
         return jsonify({
             "success": True,
@@ -967,7 +1008,7 @@ def get_submission_details(submission_id):
         
     except Exception as e:
         app_logger.error(f"Error in get_submission_details: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/stats', methods=['GET'])
 def get_arena_stats():
@@ -984,7 +1025,7 @@ def get_arena_stats():
 
     except Exception as e:
         app_logger.error(f"Error in get_arena_stats: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/restore', methods=['POST'])
 def restore_arena_data():
@@ -999,7 +1040,7 @@ def restore_arena_data():
         data = request.json
 
         if not data:
-            return jsonify({"error": "No data provided"}), 400
+            return jsonify({"success": False, "error": "No data provided"}), 400
 
         app_logger.info(f"Restoring data...")
 
@@ -1016,7 +1057,7 @@ def restore_arena_data():
 
     except Exception as e:
         app_logger.error(f"Error in restore_arena_data: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/like', methods=['POST'])
 def like_submission():
@@ -1029,7 +1070,7 @@ def like_submission():
         submission_id = data.get('submission_id')
 
         if not submission_id:
-            return jsonify({"error": "No submission_id provided"}), 400
+            return jsonify({"success": False, "error": "No submission_id provided"}), 400
 
         app_logger.info(f"Like received - Submission: {submission_id}")
 
@@ -1037,7 +1078,7 @@ def like_submission():
         updated_submission = fashion_arena.like_submission(submission_id)
 
         if not updated_submission:
-            return jsonify({"error": "Submission not found"}), 404
+            return jsonify({"success": False, "error": "Submission not found"}), 404
 
         return jsonify({
             "success": True,
@@ -1046,7 +1087,7 @@ def like_submission():
 
     except Exception as e:
         app_logger.error(f"Error in like_submission: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/cleanup', methods=['POST'])
 def cleanup_invalid_submissions():
@@ -1071,7 +1112,7 @@ def cleanup_invalid_submissions():
 
     except Exception as e:
         app_logger.error(f"Error in cleanup_invalid_submissions: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 @app.route('/api/arena/submission/<submission_id>', methods=['DELETE'])
 @limiter.limit(RATE_LIMITS["admin"])
@@ -1087,10 +1128,10 @@ def delete_submission(submission_id):
         try:
             if not validate_admin_password(password):
                 error_logger.warning(f"Failed admin authentication attempt for deletion of {submission_id}")
-                return jsonify({"error": "Incorrect password"}), 403
+                return jsonify({"success": False, "error": "Incorrect password"}), 403
         except ValueError as e:
             error_logger.error(f"Admin password validation error: {e}")
-            return jsonify({"error": "Server configuration error"}), 500
+            return jsonify({"success": False, "error": "Server configuration error"}), 500
 
         app_logger.info(f"✓ Admin authenticated - Delete request for submission: {submission_id}")
 
@@ -1098,7 +1139,7 @@ def delete_submission(submission_id):
         success = fashion_arena.delete_submission(submission_id)
 
         if not success:
-            return jsonify({"error": "Submission not found"}), 404
+            return jsonify({"success": False, "error": "Submission not found"}), 404
 
         app_logger.info(f"✓ Submission {submission_id} deleted successfully")
 
@@ -1109,7 +1150,7 @@ def delete_submission(submission_id):
 
     except Exception as e:
         app_logger.error(f"Error in delete_submission: {e}")
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"success": False, "error": str(e)}), 500
 
 # Serve React frontend static files
 @app.route('/', defaults={'path': ''})

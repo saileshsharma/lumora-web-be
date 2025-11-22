@@ -705,3 +705,71 @@ Format as JSON:
 2025-11-22 19:38:43,284 - application - INFO - Submission - Title: AI-Generated Party Outfit, Occasion: Party, Source: generator
 2025-11-22 19:38:43,292 - application - INFO - Submission successful - ID: d7baae89-249d-4d76-819a-5a21a4134e49
 2025-11-22 19:38:53,192 - application - INFO - Like received - Submission: 636d3e9a-8e2f-42f2-9318-b7768be76ff3
+2025-11-22 23:39:38,876 - application - INFO - ============================================================
+2025-11-22 23:39:38,877 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 23:39:38,877 - application - INFO - ============================================================
+2025-11-22 23:39:38,877 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 23:39:38,877 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 23:39:38,877 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 23:39:38,877 - application - INFO - ============================================================
+2025-11-22 23:39:38,877 - application - INFO - ✓ JWT authentication configured
+2025-11-22 23:39:38,925 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 23:39:38,925 - application - INFO - ✓ Rate limiting configured
+2025-11-22 23:39:38,925 - application - INFO - ✓ Security headers configured
+2025-11-22 23:39:38,927 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 23:39:38,927 - application - INFO - ============================================================
+2025-11-22 23:39:38,927 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 23:39:38,927 - application - INFO - ============================================================
+2025-11-22 23:41:39,235 - application - INFO - ============================================================
+2025-11-22 23:41:39,236 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:41:39,236 - application - INFO - ============================================================
+2025-11-22 23:41:39,241 - application - INFO - Parameters - Occasion: party, Budget: Above $500
+2025-11-22 23:41:55,283 - application - INFO - Rating analysis completed successfully
+2025-11-22 23:42:26,445 - application - INFO - ============================================================
+2025-11-22 23:42:26,446 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:42:26,446 - application - INFO - ============================================================
+2025-11-22 23:51:51,657 - application - INFO - ============================================================
+2025-11-22 23:51:51,659 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:51,659 - application - INFO - ============================================================
+2025-11-22 23:51:52,283 - application - INFO - ============================================================
+2025-11-22 23:51:52,284 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:52,284 - application - INFO - ============================================================
+2025-11-22 23:51:52,921 - application - INFO - ============================================================
+2025-11-22 23:51:52,922 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:52,922 - application - INFO - ============================================================
+2025-11-22 23:51:53,556 - application - INFO - ============================================================
+2025-11-22 23:51:53,557 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:53,557 - application - INFO - ============================================================
+2025-11-22 23:51:54,161 - application - INFO - ============================================================
+2025-11-22 23:51:54,161 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:54,162 - application - INFO - ============================================================
+2025-11-22 23:51:54,792 - application - INFO - ============================================================
+2025-11-22 23:51:54,792 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:54,792 - application - INFO - ============================================================
+2025-11-22 23:51:55,417 - application - INFO - ============================================================
+2025-11-22 23:51:55,417 - application - INFO - GENERATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:55,417 - application - INFO - ============================================================
+2025-11-22 23:51:57,044 - application - INFO - ============================================================
+2025-11-22 23:51:57,044 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:57,044 - application - INFO - ============================================================
+2025-11-22 23:51:57,393 - application - INFO - ============================================================
+2025-11-22 23:51:57,394 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:57,394 - application - INFO - ============================================================
+2025-11-22 23:51:58,364 - application - INFO - ============================================================
+2025-11-22 23:51:58,365 - application - INFO - RATE OUTFIT REQUEST RECEIVED
+2025-11-22 23:51:58,365 - application - INFO - ============================================================
+2025-11-22 23:56:11,570 - application - INFO - ============================================================
+2025-11-22 23:56:11,570 - application - INFO - OUTFIT ASSISTANT APPLICATION STARTED
+2025-11-22 23:56:11,570 - application - INFO - ============================================================
+2025-11-22 23:56:11,570 - application - INFO - Application Log: logs/application_20251122.log
+2025-11-22 23:56:11,570 - application - INFO - API Calls Log: logs/api_calls_20251122.log
+2025-11-22 23:56:11,570 - application - INFO - Errors Log: logs/errors_20251122.log
+2025-11-22 23:56:11,570 - application - INFO - ============================================================
+2025-11-22 23:56:11,570 - application - INFO - ✓ JWT authentication configured
+2025-11-22 23:56:11,615 - application - INFO - ✓ Keycloak authentication enabled
+2025-11-22 23:56:11,615 - application - INFO - ✓ Rate limiting configured
+2025-11-22 23:56:11,615 - application - INFO - ✓ Security headers configured
+2025-11-22 23:56:11,616 - application - INFO - ✓ Authentication endpoints registered
+2025-11-22 23:56:11,616 - application - INFO - ============================================================
+2025-11-22 23:56:11,616 - application - INFO - SECURITY FEATURES ENABLED
+2025-11-22 23:56:11,616 - application - INFO - ============================================================

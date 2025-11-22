@@ -1,2 +1,19 @@
 2025-11-22 19:34:07,225 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
 2025-11-22 19:36:44,009 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:42:26,450 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:51,661 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:52,284 - errors - ERROR - Validation error: {'photo': ['Field may not be null.'], 'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:52,923 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:53,557 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:54,163 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:54,793 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:55,418 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:57,045 - errors - ERROR - Error in rate_outfit: 'str' object has no attribute 'get'
+2025-11-22 23:51:57,058 - errors - ERROR - Traceback: Traceback (most recent call last):
+  File "/Users/yatika/prod-outfit/AI-Outfit-Assistant/outfit-assistant/backend/app.py", line 449, in rate_outfit
+    'photo': data.get('image'),
+             ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+2025-11-22 23:51:57,395 - errors - ERROR - Validation error: {'photo': ['Field may not be null.'], 'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}
+2025-11-22 23:51:58,366 - errors - ERROR - Validation error: {'occasion': ['Must be one of: casual, formal, business, party, wedding, date, interview, gym, beach, other.']}

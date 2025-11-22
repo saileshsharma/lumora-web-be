@@ -1,1 +1,5 @@
 .env
+logs/api_calls_20251122.log
+logs/api_calls_20251122.log
+/logs
+*.log

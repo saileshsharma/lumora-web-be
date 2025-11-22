@@ -299,3 +299,8 @@ Photorealistic, professional fashion photography, magazine quality, 3/4 body sho
 2025-11-22 19:38:33,214 - api - INFO - ============================================================
 2025-11-22 19:38:33,214 - api - INFO - IMAGE GENERATION COMPLETE
 2025-11-22 19:38:33,214 - api - INFO - ============================================================
+2025-11-22 23:41:39,241 - api - INFO - Calling GPT-4 Vision API for outfit rating...
+2025-11-22 23:41:39,241 - api - INFO -   Model: gpt-4o
+2025-11-22 23:41:39,241 - api - INFO -   Max tokens: 1500
+2025-11-22 23:41:55,282 - api - INFO - ✅ GPT-4 Vision API call SUCCESSFUL
+2025-11-22 23:41:55,283 - api - INFO -   Tokens used: 1960
